@@ -2,6 +2,7 @@ package com.example.musicapp.Activity;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
@@ -27,7 +28,7 @@ public class HomeActivity extends AppCompatActivity {
         final LoadingDialog loadingDialog = new LoadingDialog(HomeActivity.this);
         AnhXa();
         loadingDialog.StartLoadingDialog();
-        Handler handler = new Handler();
+        Handler handler = new Handler(Looper.getMainLooper());
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {

@@ -3,6 +3,7 @@ package com.example.musicapp.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -23,14 +24,14 @@ public class MainActivity extends AppCompatActivity {
         animation = AnimationUtils.loadAnimation(MainActivity.this, R.anim.anim_intent_in_main);
         intent = new Intent(MainActivity.this, HomeActivity.class);
 
-        new Handler().postDelayed(new Runnable() {
+        new Handler(Looper.myLooper()).postDelayed(new Runnable() {
             @Override
             public void run() {
                 view.setVisibility(View.VISIBLE);
                 view.startAnimation(animation);
             }
         }, 2500);
-        new Handler().postDelayed(new Runnable() {
+        new Handler(Looper.myLooper()).postDelayed(new Runnable() {
             @Override
             public void run() {
                 startActivity(intent);

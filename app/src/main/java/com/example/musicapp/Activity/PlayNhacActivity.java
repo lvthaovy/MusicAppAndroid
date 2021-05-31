@@ -7,6 +7,7 @@ import android.media.MediaPlayer;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.StrictMode;
 import android.view.View;
 import android.view.animation.Animation;
@@ -76,7 +77,8 @@ public class PlayNhacActivity extends AppCompatActivity {
     }
 
     private void enventClick() {
-        final Handler handler = new Handler();
+//        final Handler handler = new Handler(Looper.getMainLooper();
+        final Handler handler = new Handler(Looper.getMainLooper());
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -191,7 +193,7 @@ public class PlayNhacActivity extends AppCompatActivity {
                 }
                 imageButtonpreviewnhac.setClickable(false);
                 imageButtonnexnhac.setClickable(false);
-                Handler handler1 = new Handler();
+                Handler handler1 = new Handler(Looper.getMainLooper());
                 handler1.postDelayed(new Runnable() {
                     @Override
                     public void run() {
@@ -235,7 +237,7 @@ public class PlayNhacActivity extends AppCompatActivity {
                 }
                 imageButtonpreviewnhac.setClickable(false);
                 imageButtonnexnhac.setClickable(false);
-                Handler handler1 = new Handler();
+                Handler handler1 = new Handler(Looper.getMainLooper());
                 handler1.postDelayed(new Runnable() {
                     @Override
                     public void run() {
@@ -346,7 +348,7 @@ public class PlayNhacActivity extends AppCompatActivity {
         textViewcasi.setText(mangbaihat.get(position).getTenCaSi());
     }
     private void UpdateTime(){
-        final Handler handler = new Handler();
+        final Handler handler = new Handler(Looper.getMainLooper());
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -369,7 +371,7 @@ public class PlayNhacActivity extends AppCompatActivity {
                 }
             }
         }, 300);
-        final Handler handler1 = new Handler();
+        final Handler handler1 = new Handler(Looper.getMainLooper());
         handler1.postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -401,7 +403,7 @@ public class PlayNhacActivity extends AppCompatActivity {
                     }
                     imageButtonpreviewnhac.setClickable(false);
                     imageButtonnexnhac.setClickable(false);
-                    Handler handler1 = new Handler();
+                    Handler handler1 = new Handler(Looper.getMainLooper());
                     handler1.postDelayed(new Runnable() {
                         @Override
                         public void run() {
